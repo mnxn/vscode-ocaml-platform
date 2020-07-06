@@ -3,6 +3,8 @@
 ## Unreleased
 
 - Fix syntax highlighting of empty comments (#276)
+- Add `ocaml.debounce.server` configuration option to control the amount of time
+  the language server waits before recognizing requests
 
 ## 0.8.0
 
