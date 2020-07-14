@@ -28,6 +28,15 @@
           "match": "~[a-z_][A-Za-z0-9_']*"
         },
         {
+          "comment": "module type of",
+          "match": "\\b(module)\\s+(type)\\s+(of)\\b",
+          "captures": {
+            "1": { "name": "keyword.ocaml" },
+            "2": { "name": "keyword.ocaml" },
+            "3": { "name": "keyword.ocaml" }
+          }
+        },
+        {
           "comment": "type declaration",
           "match": "\\b(type)\\s+(nonrec\\s+)?(_\\s+|[+-]?'[A-Za-z][A-Za-z0-9_']*\\s+|\\(.*\\)\\s+)?([a-z_][A-Za-z0-9_']*)",
           "captures": {
@@ -38,8 +47,8 @@
           }
         },
         {
-          "comment": "and declaration for let bindings, type declarations, class bindings, or class type definitions",
-          "match": "\\b(and)\\s+((?:virtual|lazy)\\s+)?(_\\s+|'[A-Za-z][A-Za-z0-9_']*\\s+|\\(.*\\)\\s+)?([a-z_][A-Za-z0-9_']*)\\s+(?!,|::)",
+          "comment": "and declaration for let bindings, type declarations, class bindings, class type definitions, or module constraints",
+          "match": "\\b(and)\\s+(?!(?:module|type|lazy)\\b)(virtual\\s+)?(_\\s+|'[A-Za-z][A-Za-z0-9_']*\\s+|\\(.*\\)\\s+)?([a-z_][A-Za-z0-9_']*)\\s+(?!,|::)",
           "captures": {
             "1": { "name": "keyword.ocaml" },
             "2": { "name": "keyword.ocaml" },
@@ -54,7 +63,7 @@
             "1": { "name": "keyword.ocaml" },
             "2": { "name": "entity.name.function.binding.ocaml" }
           },
-          "end": "$",
+          "end": "(?<=]|\")\\s*$",
           "patterns": [
             {
               "comment": "string literal",

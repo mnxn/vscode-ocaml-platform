@@ -261,6 +261,9 @@
         "aliases": [
           "opam"
         ],
+        "filenames": [
+          "opam"
+        ],
         "extensions": [
           ".opam",
           ".opam.locked"

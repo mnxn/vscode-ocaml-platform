@@ -3,8 +3,14 @@
 ## Unreleased
 
 - Fix syntax highlighting of empty comments (#276)
+- Fix syntax highlighting of floating attributes (#281)
+- Improve highlighting of external declarations (#282)
+- Highlight unprefixed opam files (#284)
+- Fix syntax highlighting of `module type of` (#285)
+- Fix syntax highlighting of module constraints (#286)
+- Fix syntax highlighting of lazy bindings (#287)
 - Add `ocaml.debounce.server` configuration option to control the amount of time
-  the language server waits before recognizing requests
+  the language server waits before recognizing requests (#279)
 
 ## 0.8.0
 
